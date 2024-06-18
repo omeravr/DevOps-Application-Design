@@ -1,0 +1,12 @@
+apiVersion: elbv2.k8s.aws/v1beta1
+kind: TargetGroupBinding
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  ipAddressType: ipv4
+  serviceRef:
+    name: argocd-server
+    port: 8082
+  targetGroupARN: arn:aws:elasticloadbalancing:eu-central-1:045360881194:targetgroup/argocd-server/ad4938f3775400f8
+  targetType: ip
